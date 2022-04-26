@@ -68,3 +68,25 @@ header h1{
   font-weight: 700;
   display: none;
 }
+
+#restart-btn{
+  width: 100%;
+  max-width: 250px;
+  height: 70px;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgb(125, 226, 125), rgb(115, 115, 245));
+  cursor: pointer;
+  border: none;
+  transition: .3s linear;
+  display: none;
+}
+
+#restart-btn:hover{
+  border: 1px solid rgba(255, 255, 255, 0.863);
+}
+
+#restart-btn:active{
+  opacity: .7;
+}

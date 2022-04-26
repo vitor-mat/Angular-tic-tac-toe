@@ -24,16 +24,16 @@ export class AppComponent {
   }
   gameStatus = "stand by"
 
-  showSymbolGame(blockElement: HTMLSpanElement, blockId: string, finalMessage: HTMLSpanElement){
+  showSymbolGame(blockElement: HTMLSpanElement, blockId: string, finalMessage: HTMLSpanElement, restartBtn: HTMLButtonElement){
     if(blockElement.textContent === "" && this.gameStatus !== "finished"){
       this.gameStatus = "on going"
       blockElement.textContent = this.currentlySymbolGame
       if(this.currentlySymbolGame === "x"){
         this.playerX.plays.push(blockId)
-        this.victoryVerification(this.playerX, finalMessage)
+        this.victoryVerification(this.playerX, finalMessage, restartBtn)
       }else{
         this.playerO.plays.push(blockId)
-        this.victoryVerification(this.playerO, finalMessage)      
+        this.victoryVerification(this.playerO, finalMessage, restartBtn)      
       }
       this.changeSymbolGame()
     }
@@ -41,6 +41,7 @@ export class AppComponent {
     if(this.playerO.plays.length + this.playerX.plays.length === 9){
       finalMessage.textContent = `Drawn game`
       finalMessage.setAttribute("style", "display: block")
+      restartBtn.setAttribute("style", "display: block")
     }
   }
 
@@ -54,48 +55,49 @@ export class AppComponent {
     }
   }
 
-  victoryVerification(player: IPlayer, finalMessage: HTMLSpanElement){
-    this.horizontalVerification(player, finalMessage)
-    this.verticalVerification(player, finalMessage)
-    this.digonalVerification(player, finalMessage)
+  victoryVerification(player: IPlayer, finalMessage: HTMLSpanElement, restartBtn: HTMLButtonElement){
+    this.horizontalVerification(player, finalMessage, restartBtn)
+    this.verticalVerification(player, finalMessage, restartBtn)
+    this.digonalVerification(player, finalMessage, restartBtn)
   }
 
-  horizontalVerification(player: IPlayer, finalMessage: HTMLSpanElement){
+  horizontalVerification(player: IPlayer, finalMessage: HTMLSpanElement, restartBtn: HTMLButtonElement){
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block2') !== -1 && player.plays.indexOf('block3') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
     if(player.plays.indexOf('block4') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block6') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
     if(player.plays.indexOf('block7') !== -1 && player.plays.indexOf('block8') !== -1 && player.plays.indexOf('block9') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
   }
 
-  verticalVerification(player: IPlayer, finalMessage: HTMLSpanElement){
+  verticalVerification(player: IPlayer, finalMessage: HTMLSpanElement, restartBtn: HTMLButtonElement){
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block4') !== -1 && player.plays.indexOf('block7') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
     if(player.plays.indexOf('block2') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block8') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
     if(player.plays.indexOf('block3') !== -1 && player.plays.indexOf('block6') !== -1 && player.plays.indexOf('block9') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
   }
 
-  digonalVerification(player: IPlayer, finalMessage: HTMLSpanElement){
+  digonalVerification(player: IPlayer, finalMessage: HTMLSpanElement, restartBtn: HTMLButtonElement){
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block9') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
     if(player.plays.indexOf('block3') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block7') !== -1){
-      this.finishTheGame(finalMessage, player)
+      this.finishTheGame(finalMessage, player, restartBtn)
     }
   }
 
-  finishTheGame(finalMessage: HTMLSpanElement, player: IPlayer){
+  finishTheGame(finalMessage: HTMLSpanElement, player: IPlayer, restartBtn: HTMLButtonElement){
     this.gameStatus = "finished"
     finalMessage.textContent = `${player.title} win!`
     finalMessage.setAttribute("style", "display: block")
+    restartBtn.setAttribute("style", "display: block")
   }
 }
