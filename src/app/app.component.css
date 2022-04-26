@@ -78,9 +78,10 @@ header h1{
   border-radius: 10px;
   background: linear-gradient(to right, rgb(125, 226, 125), rgb(115, 115, 245));
   cursor: pointer;
-  border: none;
+  border: 1px solid #0000005e;
   transition: .3s linear;
   display: none;
+  text-shadow: 2px 2px 2px #000000b3;
 }
 
 #restart-btn:hover{
