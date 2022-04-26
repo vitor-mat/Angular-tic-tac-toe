@@ -19,7 +19,7 @@ export class AppComponent {
   changeSymbolGame(){
     switch(this.currentlySymbolGame){
       case "x":
-        this.currentlySymbolGame = "0";
+        this.currentlySymbolGame = "o";
         break;
       default:
         this.currentlySymbolGame = "x"
