@@ -100,4 +100,8 @@ export class AppComponent {
     finalMessage.setAttribute("style", "display: block")
     restartBtn.setAttribute("style", "display: block")
   }
+
+  restartGame(){
+    window.location.reload();
+  }
 }
