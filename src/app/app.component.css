@@ -45,8 +45,19 @@ header h1{
   height: 100%;
   background: purple;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
 }
 
 .board-block:hover{
   opacity: .7;
+}
+
+.symbol-game{
+  text-transform: uppercase;
+  color: white;
+  font-size: 64px;
+  font-weight: 700;
 }
