@@ -11,9 +11,10 @@ export class AppComponent {
   currentlySymbolGame = "x"
 
   showSymbolGame(blockElement: HTMLSpanElement){
-    blockElement.textContent = this.currentlySymbolGame
-
-    this.changeSymbolGame()
+    if(blockElement.textContent === ""){
+      blockElement.textContent = this.currentlySymbolGame
+      this.changeSymbolGame()
+    }
   }
 
   changeSymbolGame(){
