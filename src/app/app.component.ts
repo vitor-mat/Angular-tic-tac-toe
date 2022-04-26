@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  currentlySymbolGame = "x"
 
+  showSymbolGame(blockElement: HTMLSpanElement){
+    blockElement.textContent = this.currentlySymbolGame
+  }
 }
