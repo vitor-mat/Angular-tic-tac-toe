@@ -12,5 +12,17 @@ export class AppComponent {
 
   showSymbolGame(blockElement: HTMLSpanElement){
     blockElement.textContent = this.currentlySymbolGame
+
+    this.changeSymbolGame()
+  }
+
+  changeSymbolGame(){
+    switch(this.currentlySymbolGame){
+      case "x":
+        this.currentlySymbolGame = "0";
+        break;
+      default:
+        this.currentlySymbolGame = "x"
+    }
   }
 }
