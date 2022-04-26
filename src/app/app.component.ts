@@ -37,6 +37,11 @@ export class AppComponent {
       }
       this.changeSymbolGame()
     }
+
+    if(this.playerO.plays.length + this.playerX.plays.length === 9){
+      finalMessage.textContent = `Drawn game`
+      finalMessage.setAttribute("style", "display: block")
+    }
   }
 
   changeSymbolGame(){
