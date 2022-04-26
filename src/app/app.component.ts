@@ -22,9 +22,11 @@ export class AppComponent {
     title: "Player O",
     plays: []
   }
+  gameStatus = "stand by"
 
   showSymbolGame(blockElement: HTMLSpanElement, blockId: string){
-    if(blockElement.textContent === ""){
+    if(blockElement.textContent === "" && this.gameStatus !== "finished"){
+      this.gameStatus = "on going"
       blockElement.textContent = this.currentlySymbolGame
       if(this.currentlySymbolGame === "x"){
         this.playerX.plays.push(blockId)
@@ -55,34 +57,38 @@ export class AppComponent {
 
   horizontalVerification(player: IPlayer){
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block2') !== -1 && player.plays.indexOf('block3') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
     if(player.plays.indexOf('block4') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block6') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
     if(player.plays.indexOf('block7') !== -1 && player.plays.indexOf('block8') !== -1 && player.plays.indexOf('block9') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
   }
 
   verticalVerification(player: IPlayer){
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block4') !== -1 && player.plays.indexOf('block7') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
     if(player.plays.indexOf('block2') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block8') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
     if(player.plays.indexOf('block3') !== -1 && player.plays.indexOf('block6') !== -1 && player.plays.indexOf('block9') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
   }
 
   digonalVerification(player: IPlayer){
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block9') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
     if(player.plays.indexOf('block3') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block7') !== -1){
-      console.log(`${player.title} win`)
+      this.finishTheGame()
     }
+  }
+
+  finishTheGame(){
+    this.gameStatus = "finished"
   }
 }
