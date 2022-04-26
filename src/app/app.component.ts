@@ -50,6 +50,7 @@ export class AppComponent {
   victoryVerification(player: IPlayer){
     this.horizontalVerification(player)
     this.verticalVerification(player)
+    this.digonalVerification(player)
   }
 
   horizontalVerification(player: IPlayer){
@@ -72,6 +73,15 @@ export class AppComponent {
       console.log(`${player.title} win`)
     }
     if(player.plays.indexOf('block3') !== -1 && player.plays.indexOf('block6') !== -1 && player.plays.indexOf('block9') !== -1){
+      console.log(`${player.title} win`)
+    }
+  }
+
+  digonalVerification(player: IPlayer){
+    if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block9') !== -1){
+      console.log(`${player.title} win`)
+    }
+    if(player.plays.indexOf('block3') !== -1 && player.plays.indexOf('block5') !== -1 && player.plays.indexOf('block7') !== -1){
       console.log(`${player.title} win`)
     }
   }
