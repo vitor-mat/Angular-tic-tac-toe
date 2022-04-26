@@ -2,9 +2,11 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 50px;
   gap: 20px;
+  background: rgb(87, 13, 87);
 }
 
 header{
@@ -17,4 +19,34 @@ header{
 header h1{
   font-size: 48px;
   text-align: center;
+  color: white;
+}
+
+#game-board{
+  max-width: 315px;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: rgb(248, 78, 248);
+  padding: 5px;
+}
+
+.board-line{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  gap: 5px;
+}
+
+.board-block{
+  width: 100%;
+  height: 100%;
+  background: purple;
+  cursor: pointer;
+}
+
+.board-block:hover{
+  opacity: .7;
 }
