@@ -4,19 +4,20 @@
   </header>
   <div id="game-board">
     <div class="board-line">
-      <div class="board-block" (click)="showSymbolGame(block1, 'block1')"><span class="symbol-game" #block1></span></div>
-      <div class="board-block" (click)="showSymbolGame(block2, 'block2')"><span class="symbol-game" #block2></span></div>
-      <div class="board-block" (click)="showSymbolGame(block3, 'block3')"><span class="symbol-game" #block3></span></div>
+      <div class="board-block" (click)="showSymbolGame(block1, 'block1', finalMessage)"><span class="symbol-game" #block1></span></div>
+      <div class="board-block" (click)="showSymbolGame(block2, 'block2', finalMessage)"><span class="symbol-game" #block2></span></div>
+      <div class="board-block" (click)="showSymbolGame(block3, 'block3', finalMessage)"><span class="symbol-game" #block3></span></div>
     </div>
     <div class="board-line">
-      <div class="board-block" (click)="showSymbolGame(block4, 'block4')"><span class="symbol-game" #block4></span></div>
-      <div class="board-block" (click)="showSymbolGame(block5, 'block5')"><span class="symbol-game" #block5></span></div>
-      <div class="board-block" (click)="showSymbolGame(block6, 'block6')"><span class="symbol-game" #block6></span></div>
+      <div class="board-block" (click)="showSymbolGame(block4, 'block4', finalMessage)"><span class="symbol-game" #block4></span></div>
+      <div class="board-block" (click)="showSymbolGame(block5, 'block5', finalMessage)"><span class="symbol-game" #block5></span></div>
+      <div class="board-block" (click)="showSymbolGame(block6, 'block6', finalMessage)"><span class="symbol-game" #block6></span></div>
     </div>
     <div class="board-line">
-      <div class="board-block" (click)="showSymbolGame(block7, 'block7')"><span class="symbol-game" #block7></span></div>
-      <div class="board-block" (click)="showSymbolGame(block8, 'block8')"><span class="symbol-game" #block8></span></div>
-      <div class="board-block" (click)="showSymbolGame(block9, 'block9')"><span class="symbol-game" #block9></span></div>
+      <div class="board-block" (click)="showSymbolGame(block7, 'block7', finalMessage)"><span class="symbol-game" #block7></span></div>
+      <div class="board-block" (click)="showSymbolGame(block8, 'block8', finalMessage)"><span class="symbol-game" #block8></span></div>
+      <div class="board-block" (click)="showSymbolGame(block9, 'block9', finalMessage)"><span class="symbol-game" #block9></span></div>
     </div>
   </div>
+  <span id="final-message" #finalMessage></span>
 </div>
