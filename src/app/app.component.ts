@@ -52,7 +52,6 @@ export class AppComponent {
   }
 
   horizontalVerification(player: IPlayer){
-    if(player.title == "Player X") console.log(this.playerX.plays)
     if(player.plays.indexOf('block1') !== -1 && player.plays.indexOf('block2') !== -1 && player.plays.indexOf('block3') !== -1){
       console.log(`${player.title} win`)
     }
